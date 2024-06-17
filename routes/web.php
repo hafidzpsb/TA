@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('excel', [App\Http\Controllers\RawController::class, 'index']); // tampilkan halaman view raw
+Route::post('excel/import', [App\Http\Controllers\RawController::class, 'import']); // import excel ke database
+Route::get('question', [App\Http\Controllers\QuestionController::class, 'store']); // membuat tabel question di database
+Route::get('student', [App\Http\Controllers\StudentController::class, 'store']); // membuat tabel student di database
