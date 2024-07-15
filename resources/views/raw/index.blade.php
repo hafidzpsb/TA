@@ -67,6 +67,30 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Create Tabel Subject</h4>
+                        </div>
+                        <div class="card-body">
+                            <a href="{{ url('subject') }}" class="btn btn-primary">Create</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Create Tabel Grade</h4>
+                        </div>
+                        <div class="card-body">
+                            <a href="{{ url('grade') }}" class="btn btn-primary">Create</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

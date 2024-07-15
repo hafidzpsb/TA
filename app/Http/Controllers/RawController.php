@@ -26,6 +26,6 @@ class RawController extends Controller
         // Pindahkan file ke public/raw
         $request->file('excel')->move(public_path('/raw/excel'), $excel);
 
-        return redirect()->back() ->with('alert', 'Berhasil membuat tabel raw!');
+        return redirect()->back()->with('alert', 'Berhasil membuat tabel raw!');
     }
 }

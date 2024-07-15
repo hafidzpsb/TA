@@ -10,4 +10,9 @@ class Question extends Model
     use HasFactory;
     public $timestamps = false;
     protected $guarded = [];
+
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class);
+    }
 }

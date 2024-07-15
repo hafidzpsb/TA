@@ -11,20 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('grades', function (Blueprint $table) {
             $table->id();
             $table->integer('STUDYPROGRAMID');
-            $table->integer('CLOPLOID');
-            $table->longText('PLONAME');
-            $table->integer('PLONUMBER');
-            $table->integer('CLOCLOID');
-            $table->longText('CLONAME');
-            $table->integer('CLONUMBER');
-            $table->longText('QUESTIONDESCRIPTION');
-            $table->string('QUESTIONNUMBER');
-            $table->integer('QUESTION_PERCENTAGE');
-            $table->longText('CLOASSESSMENTTOOLSNAME');
             $table->bigInteger('COURSEID');
+            $table->integer('CLOPLOID');
+            $table->integer('CLOCLOID');
+            $table->string('QUESTIONNUMBER');
+            $table->longText('CLOASSESSMENTTOOLSNAME');
+            $table->bigInteger('STUDENTID');
+            $table->integer('CLOPOINT');
         });
     }
 
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('grades');
     }
 };

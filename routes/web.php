@@ -17,3 +17,5 @@ Route::get('excel', [App\Http\Controllers\RawController::class, 'index']); // ta
 Route::post('excel/import', [App\Http\Controllers\RawController::class, 'import']); // import excel ke database
 Route::get('question', [App\Http\Controllers\QuestionController::class, 'store']); // membuat tabel question di database
 Route::get('student', [App\Http\Controllers\StudentController::class, 'store']); // membuat tabel student di database
+Route::get('subject', [App\Http\Controllers\SubjectController::class, 'store']); // membuat tabel subject di database
+Route::get('grade', [App\Http\Controllers\GradeController::class, 'store']); // membuat tabel grade di database

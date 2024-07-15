@@ -4,31 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Raw;
-use App\Models\Student;
+use App\Models\Subject;
 
-class StudentController extends Controller
+class SubjectController extends Controller
 {
     public function store()
     {
         if (Raw::count() > 0)
         {
-            $table = Raw::select('STUDYPROGRAMID', 'STUDENTID', 'FULLNAME', 'CLASS')
+            $table = Raw::select('STUDYPROGRAMID', 'SUBJECTCODE', 'COURSEID')
             ->where('STUDYPROGRAMID', '=', 22) // 22 diganti dengan id prodi user
-            ->groupBy('STUDENTID')
-            ->groupBy('CLASS')
-            ->orderBy('CLASS')
+            ->groupBy('SUBJECTCODE')
+            ->orderBy('SUBJECTCODE')
             ->get();
 
             foreach($table as $row)
             {
-                Student::updateOrCreate([
+                Subject::updateOrCreate([
                     'STUDYPROGRAMID' => $row->STUDYPROGRAMID,
-                    'STUDENTID' => $row->STUDENTID,
-                    'FULLNAME' => $row->FULLNAME,
-                    'CLASS' => $row->CLASS,
+                    'SUBJECTCODE' => $row->SUBJECTCODE,
+                    'COURSEID' => $row->COURSEID,
                 ]);
             }
-            return redirect()->back()->with('alert', 'Berhasil membuat tabel student!');
+            return redirect()->back()->with('alert', 'Berhasil membuat tabel subject!');
         } 
         else 
         {
