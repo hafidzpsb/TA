@@ -13,14 +13,8 @@ return new class extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->integer('STUDYPROGRAMID');
-            $table->bigInteger('COURSEID');
-            $table->integer('CLOPLOID');
-            $table->integer('CLOCLOID');
-            $table->string('QUESTIONNUMBER');
-            $table->longText('CLOASSESSMENTTOOLSNAME');
-            $table->bigInteger('STUDENTID');
-            $table->integer('CLOPOINT');
+            $table->integer('plo_point');
+            $table->integer('clo_point');
         });
     }
 

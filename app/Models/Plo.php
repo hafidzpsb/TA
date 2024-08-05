@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Raw extends Model
+class PLO extends Model
 {
     use HasFactory;
-    public $timestamps = false;
-    protected $guarded = [];
 }
